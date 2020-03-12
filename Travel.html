@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travel</title>
+<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+<style>
+
+#container {
+  overflow: hidden;
+  width: 800px;
+  height: 700px;
+  margin: 0 auto;
+  cursor: pointer;
+  margin-top:150px;
+}
+
+#imgs {
+  display: block;
+  padding: 0;
+  width: 200%;
+}
+
+#imgs li {
+  padding-right: 10px;
+  display: inline-block;
+ *display:inline;
+}
+
+#imgs img {
+  width: 500px;
+  height: 220px;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  height: 38px;
+  line-height: 38px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: #ddd;
+}
+
+h1 {
+  color: red;
+  font-family: verdana;
+  font-size: 300%;
+  
+}
+body {background-color: powderblue;}
+h1   {color: red;}
+p  {
+  color: black;
+  font-family: courier;
+  font-size: 160%;
+}
+</style>
+
+</head>
+<body>
+
+<h1> Travel Interests </h1>
+<p> Travelling is like food for thought to our brain. It changes your perception towards life. It teaches you things that are beyond books. It teaches you how to live. People usually think, it’s a waste of money or it is something for the rich. But I say it’s for everyone. Since ancient times people traveled far and wide to earn livelihoods and learn new things. It’s not a recreational activity but a way of life.</p>
+
+<div id="container"> <span class="title">Travel</span>
+  <ul id="imgs">
+    <li><img src="water.png" alt="" /></li>
+    <li><img src="plane.png" alt="" /></li>
+    <li><img src="NYC.jpg" alt="" /></li>
+    <li><img src="beach.png" alt="" /></li>
+    <li><img src="seattle.jpg" alt="" /></li>
+   <li><img src="Portland.jpg" alt="" /></li>
+   
+  </ul>
+  <span class="title"></span> </div>
+<div id="controler"> </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> 
+<script type="text/javascript" src="ImageScroll.js"></script> 
+<script type="text/javascript">
+
+  $('#imgs').imageScroll({
+    orientation:"left",
+    speed:600,
+    interval:1000,
+    hoverPause:true,
+    callback:function(){
+      var ordinal = $(this).find("img").first().attr("src");
+      <!-- console.log(ordinal); -->
+      $(this).next("span").text("CallbackDisplay: hidden "+ordinal+"!");
+    }
+  });
+
+  </script><script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+<a href="Homepage.html" >Home</a>
+<a href="interests.html" >Interests</a>
+</html>
